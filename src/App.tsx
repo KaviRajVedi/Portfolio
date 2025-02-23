@@ -86,7 +86,7 @@ function App() {
       ],
       image:
         "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80",
-      github: "https://github.com/username/web3-dapp",
+      github: "https://github.com/KaviRajVedi/SocialMediaonBlockchain",
     },
     {
       title: "Stock Exchange Web Application",
@@ -102,7 +102,7 @@ function App() {
       ],
       image:
         "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
-      github: "https://github.com/username/stock-exchange",
+      github: "https://github.com/KaviRajVedi/Stock-Exchange",
     },
   ];
 
