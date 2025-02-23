@@ -4,7 +4,7 @@ Welcome to my personal portfolio website repository. This project is built with 
 
 ## Live Demo
 
-Check out the live demo here: [Live Demo](https://example.com)
+Check out the live demo here: [Live Demo](https://kavirajvedi.github.io/Portfolio/)
 
 ## Table of Contents
 
