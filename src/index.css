@@ -1,0 +1,178 @@
+@import "tailwindcss";
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  z-index: 50;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  animation: navFadeIn 0.5s ease-out;
+}
+
+@keyframes navFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
+.dark .glass-nav {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-menu {
+  @apply fixed top-0 left-0 h-full w-64 transform transition-transform duration-300 ease-in-out z-50;
+}
+
+.mobile-menu.open {
+  @apply translate-x-0;
+}
+
+.mobile-menu.closed {
+  @apply -translate-x-full;
+}
+
+.mobile-menu-overlay {
+  @apply fixed inset-0 bg-black/50 transition-opacity duration-300 z-40;
+  --tw-bg-opacity: 0.5;
+}
+
+.mobile-menu-overlay.open {
+  @apply opacity-100 pointer-events-auto;
+}
+
+.mobile-menu-overlay.closed {
+  @apply opacity-0 pointer-events-none;
+}
+
+.mobile-menu-button {
+  @apply fixed top-6 left-6 z-50 p-2 rounded-lg transition-colors duration-300;
+}
+
+.skill-card {
+  @apply relative backdrop-blur-sm rounded-xl p-6 border transition-all duration-300;
+  transform: translateZ(0);
+}
+
+.dark .skill-card {
+  @apply bg-white/5 border-white/10 hover:border-white/20;
+}
+
+.light .skill-card {
+  @apply bg-black/5 border-black/10 hover:border-black/20;
+}
+
+.contact-input {
+  @apply w-full px-4 py-3 rounded-lg border focus:outline-none transition-all duration-300;
+}
+
+.dark .contact-input {
+  @apply bg-white/5 border-white/10 focus:border-white/30 text-white placeholder-white/30;
+}
+
+.light .contact-input {
+  @apply bg-black/5 border-black/10 focus:border-black/30 text-black placeholder-black/50;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  transition: all 500ms;
+  transform: translateZ(0);
+}
+
+.project-overlay {
+  @apply absolute inset-0 flex flex-col justify-end p-6 backdrop-blur-sm;
+  transform: translateY(100%) translateZ(0);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .project-overlay {
+  @apply bg-black/70;
+}
+
+.light .project-overlay {
+  @apply bg-white/70;
+}
+
+.project-card:hover .project-overlay {
+  transform: translateY(0) translateZ(0);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r;
+}
+
+.dark .gradient-text {
+  @apply from-purple-400 via-fuchsia-400 to-blue-400;
+}
+
+.light .gradient-text {
+  @apply from-purple-600 via-pink-600 to-blue-600;
+}
+
+.nav-link {
+  @apply relative px-4 py-2 transition-all duration-300;
+}
+
+.nav-link::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 ease-out;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.theme-toggle {
+  @apply fixed top-6 right-6 z-50 p-2 rounded-full transition-colors duration-300;
+}
+
+.dark .theme-toggle {
+  @apply bg-white/10 hover:bg-white/20 text-white;
+}
+
+.light .theme-toggle {
+  @apply bg-black/10 hover:bg-black/20 text-black;
+}
+
+.interactive-area {
+  @apply relative overflow-hidden;
+  transform: translateZ(0);
+}
+
+.coding-profile-card {
+  @apply p-4 rounded-lg border transition-all duration-300;
+}
+
+.dark .coding-profile-card {
+  @apply bg-white/5 border-white/10 hover:border-white/20;
+}
+
+.light .coding-profile-card {
+  @apply bg-black/5 border-black/10 hover:border-black/20;
+}
